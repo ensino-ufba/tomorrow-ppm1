@@ -569,8 +569,8 @@ P: circular variáveis
 
 ## Pensando “de fora pra dentro”
 
-<img src="03-fig-tabuada.png" width="100%">
-![](03-fig-tabuada.png)
+<img src="./figs/03-fig-tabuada.png" width="100%">
+![](./figs/03-fig-tabuada.png)
 
 Escrever a tabuada de 1 até a tabuada de 5
 
