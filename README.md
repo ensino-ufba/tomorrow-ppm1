@@ -1,8 +1,6 @@
-## Aulas da área de computação
+## Aulas
 
-Prof. Rodrigo Rocha, UFBA
+Ver diretório [ilp](ilp)
 
-Site: <https://rodrigorgs.github.io/aulas/>
 
-Material do professor (acesso restrito): <https://rodrigorgs.gitlab.io/aulas-private/>
 
