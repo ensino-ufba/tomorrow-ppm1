@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["page.scss"],"names":[],"mappings":"AAEQ;AAER;EACE;EACA;EACA;;;AAGF;EACE","sourcesContent":["@charset \"utf-8\";\n\n@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);\n\n.stdin, .stdout {\n  vertical-align: top;\n  width: 49%;\n  height: 3.8em;\n}\n  \n.painel {\n  display: none;\n}"],"file":"page.css"}

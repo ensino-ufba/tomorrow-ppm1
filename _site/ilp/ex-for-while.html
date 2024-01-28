@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Exercícios: for/while</title>
+  <meta name="description" content="Material de disciplinas.
+">
+  
+  <link rel="stylesheet" href="/aulas/css/main.css">
+  <script type="text/javascript" src="/aulas/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/aulas/lib/jquery-ui/jquery-ui.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/aulas/lib/jquery-ui/jquery-ui.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="/aulas/lib/simple-hint/simple-hint.min.css">
+  
+  <script type="text/javascript" src="/aulas/lib/confetti/confetti.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin' rel='stylesheet' type='text/css' />
+
+  
+<script src="/aulas/lib/codemirror/codemirror.js"></script>
+<script src="/aulas/lib/codemirror/addon/edit/matchbrackets.js"></script>
+<link rel="stylesheet" href="/aulas/lib/codemirror/codemirror.css">
+<link rel="stylesheet" href="/aulas/lib/codemirror/addon/hint/show-hint.css">
+<link rel="stylesheet" href="/aulas/lib/codemirror/addon/lint/lint.css">
+<script type="text/javascript" src="/aulas/lib/editors/editors-codemirror.js"></script>
+
+
+
+
+
+
+
+<script src="/aulas/lib/codemirror/mode/python/python.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"></script>
+<script type="text/javascript" src="/aulas/lib/editors/eval-python.js"></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/aulas/css/triple.css">
+<script type="text/javascript" src="/aulas/lib/triple-page.js"></script>
+
+
+
+<script type="text/javascript" src="/aulas/lib/ezsubmission/ezsubmission.js"></script>
+<script type="text/javascript" src="/aulas/lib/submissao/submissao2.js"></script>
+<script>
+  document.hasLogin = true
+</script>
+
+
+  
+  <link rel="canonical" href="http://localhost:4000/aulas/ilp/ex-for-while.html">
+  <link rel="alternate" type="application/rss+xml" title="Disciplinas (UFBA)" href="http://localhost:4000/aulas/feed.xml">
+</head>
+
+    
+    <body>
+        <script type="text/javascript">
+            document.triplePage = true;
+        </script>
+
+        <div class="painel" x-data>
+            <input type="button" class="btn-back" value="Anterior"
+                    x-bind:disabled="$store.triple.isFirstPage()"
+                    @click="$store.triple.move(-1);"/>
+            <input type="button" class="btn-fwd" value="Próximo"
+                    x-bind:disabled="$store.triple.isLastPage()"
+                    @click="$store.triple.move(1);"/>
+            <span>
+                <span x-text="$store.triple.currentPage + 1">0</span> /
+                <span x-text="$store.triple.pages.length">0</span>
+            </span>
+             &mdash;
+            <span>
+                <span x-show="$store.submission.wasSaved($store.triple.currentPage)">
+                    Salvo em
+                    <span x-text="$store.submission.getSubmissionTimestamp($store.triple.currentPage)"></span>
+                    </span>
+                </span>
+                <span x-show="!$store.submission.wasSaved($store.triple.currentPage)">
+                    Ainda não foi salvo
+                </span>
+            </span>
+            <!-- <input type="button" id="expandeEditor" value="Expandir editor"/> -->
+        </div>
+        
+        <header class="site-header">
+
+  <div class="wrapper">
+
+    <div>
+    <a class="site-title" href="/aulas/">Disciplinas (UFBA)</a>
+
+    <span class="page-title">Exercícios: for/while</span>
+    </div>
+
+    
+    
+    <div x-data x-show="$store.submission.hasSubmission" style="float: right;">
+      <div id="loginbar">
+        <span class="loginbar-logout" x-show="$store.submission.username">
+          <span>User:</span>
+          <span class="loginbar-username" x-text="$store.submission.username || '?'">?</span>
+          <button onclick="logout();">Logout</button>
+          <!-- <button onclick="enviaRespostasTotal();">Enviar respostas</button> -->
+          <!-- <button onclick="carregaRespostasTotal();">Carregar respostas</button> -->
+          <button onclick="proximaResposta(-1);" x-show="$store.submission.isAdmin">&lt;</button>
+          <button onclick="proximaResposta(1);" x-show="$store.submission.isAdmin">&gt;</button>
+          <!-- <a onclick="clickStats(this);">Stats</a> -->
+        </span>
+        <span class="loginbar-login" x-show="!$store.submission.username">
+          <button onclick="showLogin();">Login</button>
+        </span>
+      </div>
+      <div id="dialog" title="Login" style="display: none">
+      <form autocomplete="off">
+        <input id="username" type="text" size="25" placeholder="Username" /><br/>
+        <input id="password" type="password" size="25" placeholder="Password" /><br/>
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
+      </form>
+      </div>
+      <div id="codeDialog" title="Informações" style="display: none">
+        <div id="codeDialogText"></div>
+      </div>
+    </div>
+
+    <script>
+      window.hasSubmission = true;
+
+      loginDialog = jQuery("#dialog");
+      loginDialog.find("form").on("submit", function (evt) {
+        evt.preventDefault();
+        submitLoginDialog();
+      });
+    </script>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+        <div class=postpost-content">
+            <h2 id="repetindo-n-vezes">Repetindo N vezes</h2>
+
+<p>O programa ao lado imprime “Oi” 3 vezes. Modifique-o para que imprima “Oi” <code class="language-plaintext highlighter-rouge">n</code> vezes, onde <code class="language-plaintext highlighter-rouge">n</code> é um número inteiro lido do teclado.</p>
+
+<textarea class="code lang-python">
+n = int(input())
+
+for i in range(3):
+  print("Oi")
+</textarea>
+
+<textarea class="stdin">4</textarea>
+
+<div class="testcases">
+3]]]Oi\nOi\nOi=====
+5]]]Oi\nOi\nOi\nOi\nOi=====
+</div>
+
+<h2 id="valor-total-de-cada-item">Valor total de cada item</h2>
+
+<p>O programa ao lado 1) lê um número <code class="language-plaintext highlighter-rouge">qtd</code> e depois 2) lê um par de números inteiros representando a quantidade e o preço unitário de um item e 3) imprime o valor dos itens. Modifique o programa para que ele repita os passos (2) e (3) <code class="language-plaintext highlighter-rouge">qtd</code> vezes; ou seja, o programa deve calcular o valor final de <code class="language-plaintext highlighter-rouge">qtd</code> itens, descritos na entrada pela sua quantidade e preço unitário .</p>
+
+<textarea class="code lang-python">
+qtd = int(input())
+
+unidades, preco = map(int, input().split())
+print(unidades * preco)
+</textarea>
+
+<textarea class="stdin">1
+2 3</textarea>
+
+<div class="testcases">
+1\n2 3]]]6=====
+2\n3 5\n4 3]]]15\n12\n=====
+3\n2 10\n3 10\n10 5]]]20\n30\n50\n=====
+</div>
+
+<h2 id="contando-até-n">Contando até n</h2>
+
+<p>O programa ao lado imprime os números de 0 a 9. Modifique-o de forma que ele imprima os números de 0 a <code class="language-plaintext highlighter-rouge">n</code> - 1, onde <code class="language-plaintext highlighter-rouge">n</code> é um número inteiro lido do teclado.</p>
+
+<textarea class="code lang-python">
+for numero in range(10):
+  print(numero)
+</textarea>
+
+<textarea class="stdin">6</textarea>
+
+<div class="testcases">
+10]]]0\n1\n2\n3\n4\n5\n6\n7\n8\n9=====
+5]]]0\n1\n2\n3\n4=====
+</div>
+
+<h2 id="contando-ao-contrário-de-dois-em-dois">Contando ao contrário, de dois em dois</h2>
+
+<p>Crie um programa que lê um número inteiro <code class="language-plaintext highlighter-rouge">n</code> e imprime os números de <code class="language-plaintext highlighter-rouge">n</code> até 0, de dois em dois (um número em cada linha).</p>
+
+<textarea class="code lang-python">
+n = int(input())
+</textarea>
+
+<textarea class="stdin">4</textarea>
+
+<div class="testcases">
+6]]]6\n4\n2\n0=====
+5]]]5\n3\n1=====
+</div>
+
+<h2 id="enquanto-houver-ingredientes">Enquanto houver ingredientes</h2>
+
+<p>Um bolo leva 3 ovos, 2 xícaras de farinha, 1 xícara de leite e 1 colher de fermento. Escreva um programa que lê a quantidade de ovos, farinha, leite e fermento disponíveis e imprime “bolo” enquanto houver ingredientes suficientes para fazer um bolo.</p>
+
+<p>Atenção: cuidado para não criar um loop infinito! Se isso acontecer, seu navegador poderá travar.</p>
+
+<textarea class="code lang-python">
+ovos = int(input())
+farinha = int(input())
+leite = int(input())
+fermento = int(input())
+
+print("bolo")
+print("bolo")
+print("bolo")
+</textarea>
+
+<textarea class="stdin">3
+2
+1
+1</textarea>
+
+<div class="testcases">
+3\n2\n1\n1]]]bolo=====
+7\n20\n10\n10]]]bolo\nbolo=====
+</div>
+
+<h2 id="contador-de-alunos">Contador de alunos</h2>
+
+<p>Crie um programa que lê os números de matrícula dos alunos de uma turma, um número por linha, e imprime o número de alunos lidos. O número 0 indica fim da entrada, e não representa um aluno.</p>
+
+<textarea class="code lang-python">
+matricula = int(input())
+qtd = 0
+
+# ...
+
+print(qtd)
+</textarea>
+
+<textarea class="stdin">111
+222
+333
+0</textarea>
+
+<div class="testcases">
+123\n456\n789\n0]]]3=====
+123\n456\n789\n111\n222\n0]]]5=====
+0]]]0=====
+</div>
+
+<h2 id="quebra-de-linha">Quebra de linha</h2>
+
+<p>Crie um programa que lê uma linha de texto e imprime cada palavra em uma linha.</p>
+
+<textarea class="code lang-python">
+
+</textarea>
+
+<textarea class="stdin">O rato roeu a roupa do rei de Roma</textarea>
+
+<div class="testcases">
+um dois tres]]]um\ndois\ntres=====
+a b c d e]]]a\nb\nc\nd\ne=====
+xyz]]]xyz=====
+</div>
+
+<h2 id="menor">Menor</h2>
+
+<p>Crie um programa que lê uma sequência de números inteiros positivos, um número por linha, e imprime o menor deles. A sequência termina quando o número 0 é lido. A sequência possuirá pelo menos um número.</p>
+
+<p>Atenção: cuidado para não criar um loop infinito! Se isso acontecer, seu navegador poderá travar.</p>
+
+<textarea class="code lang-python">
+n = int(input()
+menor = n
+
+# ...
+
+print(n)
+</textarea>
+
+<textarea class="stdin">1
+2
+3
+0</textarea>
+
+<div class="testcases">
+3\n5\n9\n0]]]3=====
+5\n4\n3\n2\n1\n0]]]1=====
+6\n2\n8\n0]]]2=====
+</div>
+
+<h2 id="combinações">Combinações</h2>
+
+<p>Crie um programa que lê dois números inteiros <code class="language-plaintext highlighter-rouge">n</code> e <code class="language-plaintext highlighter-rouge">k</code>, separados por espaço, e imprime todos os pares de números inteiros <code class="language-plaintext highlighter-rouge">i</code> e <code class="language-plaintext highlighter-rouge">j</code> tais que <code class="language-plaintext highlighter-rouge">1 &lt;= i &lt;= n</code>, <code class="language-plaintext highlighter-rouge">1 &lt;= j &lt;= k</code>, em ordem crescente, variando primeiro <code class="language-plaintext highlighter-rouge">j</code>, e depois <code class="language-plaintext highlighter-rouge">i</code>. Cada par deve ser impresso em uma linha, com os números separados por espaço. Exemplo:</p>
+
+<p>Entrada:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2 3
+</code></pre></div></div>
+
+<p>Saída:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 1
+1 2
+1 3
+2 1
+2 2
+2 3
+</code></pre></div></div>
+
+<textarea class="code lang-python">
+n, k = map(int, input().split())
+
+print(1, 1)
+</textarea>
+
+<textarea class="stdin">2 3</textarea>
+
+<div class="testcases">
+2 3]]]1 1\n1 2\n1 3\n2 1\n2 2\n2 3=====
+3 2]]]1 1\n1 2\n2 1\n2 2\n3 1\n3 2=====
+4 1]]]1 1\n2 1\n3 1\n4 1=====
+1 4]]]1 1\n1 2\n1 3\n1 4=====
+</div>
+
+        </div>
+
+        <div id="triple-container"></div>
+
+    </body>
+
+</html>

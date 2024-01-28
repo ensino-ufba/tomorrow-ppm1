@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entrada e saída em Python</title>
+    <meta charset="utf-8">
+    
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Bebas+Neue:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+
+      /* body { font-family: 'Droid Serif'; } */
+      body { font-family: 'Open Sans'; color:#475142; font-size: 20px}
+
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-slides-area table th { background-color: lightgray; padding: 7px; border: 2px solid darkgray; }
+      .remark-slides-area table td { background-color: white; padding: 7px; border: 2px solid darkgray; }
+      .remark-slides-area table { border: 3px solid darkgray; border-collapse: collapse; }
+
+      .remark-inline-code {
+        color: darkcyan;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 30%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 65%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      .left-50 {
+        color: #777;
+        width: 49%;
+        height: 92%;
+        float: left;
+      }
+        .left-50 h2:last-of-type, .left-50 h3:last-child {
+          color: #000;
+        }
+      .right-50 {
+        width: 49%;
+        float: right;
+        padding-top: 1em;
+      }
+
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      .exercise {
+        background: #ceeaff;
+      }
+
+      .line-numbers{
+        /* Set "line-numbers-counter" to 0 */
+        counter-reset: line-numbers-counter;
+      }
+
+      .line-numbers .remark-code-line::before {
+        /* Increment "line-numbers-counter" by 1 */
+        counter-increment: line-numbers-counter;
+        content: counter(line-numbers-counter);
+        text-align: right;
+        width: 35px;
+        border-right: 1px solid #aaa;
+        display: inline-block;
+        margin-right: 10px;
+        padding: 0 5px;
+      }
+
+      strong {
+        color: #bf2a19
+      }
+
+      blockquote {
+        margin-left: 0;
+        padding-left: 1em;
+        border-left: 5px solid #f5d018;
+        font-size: 22px;
+      }
+    </style>
+
+    <script type="text/javascript" src="/aulas/lib/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="/aulas/css/misc.css">
+    <script type="text/javascript" src="/aulas/js/misc.js"></script>
+    <script type="text/javascript" src="/aulas/lib/plantuml/plantuml-encoder.min.js"></script>
+    <script type="text/javascript" src="/aulas/lib/plantuml/plantuml-replacer.js"></script>
+  
+    <body>
+    
+    
+<script src="/aulas/lib/codemirror/codemirror.js"></script>
+<script src="/aulas/lib/codemirror/addon/edit/matchbrackets.js"></script>
+<link rel="stylesheet" href="/aulas/lib/codemirror/codemirror.css">
+<link rel="stylesheet" href="/aulas/lib/codemirror/addon/hint/show-hint.css">
+<link rel="stylesheet" href="/aulas/lib/codemirror/addon/lint/lint.css">
+<script type="text/javascript" src="/aulas/lib/editors/editors-codemirror.js"></script>
+
+
+<script src="/aulas/lib/codemirror/mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="/aulas/lib/ramda/ramda.min.js"></script>
+<script type="text/javascript" src="/aulas/lib/editors/eval-javascript.js"></script>
+
+
+<script src="/aulas/lib/codemirror/mode/ruby/ruby.js"></script>
+<!-- <script src="https://repl.it/lib/api.js" type="text/javascript" charset="utf-8"></script> -->
+<script type="text/javascript" src="/aulas/lib/editors/eval-ruby.js"></script>
+
+
+<script src="/aulas/lib/codemirror/mode/scheme/scheme.js"></script>
+<script src="/aulas/lib/biwascheme/biwascheme-0.6.6-min.js"></script>
+<script type="text/javascript" src="/aulas/lib/editors/eval-biwascheme.js"></script>
+
+
+<script src="/aulas/lib/codemirror/mode/clike/clike.js"></script>
+
+
+<script src="/aulas/lib/jscpp/JSCPP.es5.min.js"></script>
+<script type="text/javascript" src="/aulas/lib/editors/eval-cpp.js"></script>
+
+
+<script src="/aulas/lib/codemirror/mode/python/python.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"></script>
+<script type="text/javascript" src="/aulas/lib/editors/eval-python.js"></script>
+
+
+<script type="text/javascript" src="/aulas/lib/plantuml/plantuml-encoder.min.js"></script>
+<script type="text/javascript" src="/aulas/lib/plantuml/plantuml-replacer.js"></script>
+
+
+<script src="/aulas/lib/codemirror/mode/dart/dart.js"></script>
+
+
+<script  src="/aulas/lib/quizdown/quizdown.js"></script>
+<script>quizdown.init();</script>
+
+
+<script  src="/aulas/lib/survey/survey.js"></script>
+
+
+
+<link rel="stylesheet" href="/aulas/css/page.css">
+
+
+
+<script type="text/javascript" src="/aulas/lib/ezsubmission/ezsubmission.js"></script>
+<script type="text/javascript" src="/aulas/lib/submissao/submissao2.js"></script>
+<script>
+  document.hasLogin = true
+</script>
+
+
+    
+  </head>
+    <textarea id="source">
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+name: exercise
+layout: true
+class: exercise
+---
+name: normal
+layout: true
+class: none
+---
+template: normal
+template: inverse
+
+# Entrada e saída de dados
+
+
+.footnote[Introdução à Programação com Python<br><br>Instituto de Computação<br>Universidade Federal da Bahia]
+
+
+---
+
+# Entrada e saída
+
+- As instruções de entrada e saída permitem ao seu programa interagir com informações externas a ele
+- Estudaremos como **ler** do teclado (entrada) e **escrever** da tela (saída)
+- Saída de dados: `print()`
+- Entrada de dados: `input()`
+
+---
+
+template: inverse
+# Saída de dados
+---
+# Saída de dados: print
+
+- Para exibir (imprimir) um valor na tela, use a instrução `print(x)`, substituindo `x` pela expressão cujo resultado deve ser exibido. Exemplos:
+
+```python
+print(5)
+print("Oi")
+print(3.14 / 2)
+```
+
+---
+
+# Imprimindo com número definido de casas decimais
+
+- Para imprimir um valor com um determinado número de casas decimais, converta-o para string usando f-strings. Exemplo:
+
+```python
+total = 1 / 7 #=> 0.14285714285714285
+print(f'{total:.2f}') #=> 0.14
+```
+<!-- 
+- Se você precisar controlar o número de casas decimais que vão ser exibidas, use a função `format(x, .Nf)`, que converte um número, `x`, em uma string que representa o número com `N` casas decimais. Exemplo:
+
+```python
+numero = 1.5 ** 2
+print(format(numero, ".2f"))
+print(format(numero, ".5f"))
+```
+-->
+
+---
+
+# Imprimindo múltiplos valores na mesma linha
+
+- Você também pode usar f-strings. Exemplo:
+
+```python
+a = 1
+b = 2
+c = 3
+print(f'{a} {b} {c}') #=> 1 2 3
+```
+
+---
+
+# Imprimindo múltiplos valores na mesma linha
+
+Você pode passar para o `print` diversas expressões separadas por vírgulas. Exemplo:
+
+```python
+idade = 18
+print("Eu tenho", idade, "anos")
+```
+
+Na saída, as expressões ficam separadas por um espaço em branco. Se quiser remover essa separação, adicione `sep=""`:
+
+```python
+ddd = 71
+telefone = "5555-5555"
+print("(", ddd, ") ", telefone, sep="")
+```
+
+---
+
+# Evitando a quebra de linha
+
+A princípio cada `print` escreve uma linha de texto. Exemplo:
+
+```python
+print("Oi, ")
+print("pessoal!")
+```
+
+Se você quiser evitar a quebra de linha, use `end=""`. Exemplo:
+
+```python
+print("Oi, ", end="")
+print("pessoal!")
+```
+
+---
+
+template: inverse
+# Entrada de dados
+---
+
+# Entrada: input()
+
+- `input()` lê tudo o que o usuário digita até apertar Enter e retorna o texto digitado como uma string. Exemplo:
+
+```python
+print("Qual é o seu nome?")
+nome = input()
+print("Oi", nome)
+```
+
+---
+template: exercise
+# Exemplo com input()
+
+Qual a saída do programa a seguir, considerando como entradas os números 2 e 3?
+
+```python
+print("Digite o primeiro número:")
+a = input()
+print("Digite o segundo número:")
+b = input()
+print("Soma:", a + b)
+```
+
+--
+
+O `input` sempre retorna uma string! Se necessário, você deve converter para o tipo desejado.
+
+---
+
+template: exercise
+# Exemplo com input()
+
+
+Programa corrigido:
+
+```python
+print("Digite o primeiro número:")
+a = float(input())
+print("Digite o segundo número:")
+b = float(input())
+print("Soma:", a + b)
+```
+
+---
+
+template: exercise
+# Outro exemplo com input()
+
+Programa que lê um número e imprime seu dobro:
+
+```python
+numero = int(input())
+print(numero * 2)
+```
+
+---
+
+# Lendo diversos valores na mesma linha
+
+Programa que lê uma linha com três números inteiros, separados por espaço, e mostra a soma dos números:
+
+```python
+a, b, c = input().split()
+a = int(a)
+b = int(b)
+c = int(c)
+print(a + b + c)
+```
+
+`split()` separa o texto da entrada onde tem espaço em branco; cada uma das partes é atribuída para uma variável
+
+Note que `split()` retorna strings; é necessário converter cada parte para inteiro antes de fazer a soma.
+
+
+    </textarea>
+    <script src="/aulas/lib/remark/remark.min.js"></script>
+    <script>
+      remark.macros.width = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+      };
+      remark.macros.height = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="height: ' + percentage + '" />';
+      };
+      var slideshow = remark.create({highlightLines: true});
+    </script>
+
+    
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Disciplinas (UFBA)</title>
+  <meta name="description" content="Material de disciplinas.
+">
+  
+  <link rel="stylesheet" href="/aulas/css/main.css">
+  <script type="text/javascript" src="/aulas/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/aulas/lib/jquery-ui/jquery-ui.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/aulas/lib/jquery-ui/jquery-ui.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="/aulas/lib/simple-hint/simple-hint.min.css">
+  
+  <script type="text/javascript" src="/aulas/lib/confetti/confetti.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin' rel='stylesheet' type='text/css' />
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/aulas/css/page.css">
+
+
+
+
+  
+  <link rel="canonical" href="http://localhost:4000/aulas/">
+  <link rel="alternate" type="application/rss+xml" title="Disciplinas (UFBA)" href="http://localhost:4000/aulas/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <div>
+    <a class="site-title" href="/aulas/">Disciplinas (UFBA)</a>
+
+    <span class="page-title"></span>
+    </div>
+
+    
+    
+    <div x-data x-show="$store.submission.hasSubmission" style="float: right;">
+      <div id="loginbar">
+        <span class="loginbar-logout" x-show="$store.submission.username">
+          <span>User:</span>
+          <span class="loginbar-username" x-text="$store.submission.username || '?'">?</span>
+          <button onclick="logout();">Logout</button>
+          <!-- <button onclick="enviaRespostasTotal();">Enviar respostas</button> -->
+          <!-- <button onclick="carregaRespostasTotal();">Carregar respostas</button> -->
+          <button onclick="proximaResposta(-1);" x-show="$store.submission.isAdmin">&lt;</button>
+          <button onclick="proximaResposta(1);" x-show="$store.submission.isAdmin">&gt;</button>
+          <!-- <a onclick="clickStats(this);">Stats</a> -->
+        </span>
+        <span class="loginbar-login" x-show="!$store.submission.username">
+          <button onclick="showLogin();">Login</button>
+        </span>
+      </div>
+      <div id="dialog" title="Login" style="display: none">
+      <form autocomplete="off">
+        <input id="username" type="text" size="25" placeholder="Username" /><br/>
+        <input id="password" type="password" size="25" placeholder="Password" /><br/>
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
+      </form>
+      </div>
+      <div id="codeDialog" title="Informações" style="display: none">
+        <div id="codeDialogText"></div>
+      </div>
+    </div>
+
+    <script>
+      window.hasSubmission = false;
+
+      loginDialog = jQuery("#dialog");
+      loginDialog.find("form").on("submit", function (evt) {
+        evt.preventDefault();
+        submitLoginDialog();
+      });
+    </script>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="cursos">Cursos</h1>
+
+<ul>
+  <li><a href="ilp">PPM 1 - Introdução à Programação com  Python para Meninas</a></li>
+</ul>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Disciplinas (UFBA)</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Disciplinas (UFBA)</li>
+          <li><a href="mailto:christina.flach@gmail.com">christina.flach@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Material de disciplinas.
+</p>
+        <p><a href="/edit/gh-pages/index.md">Edit this page</a></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+  </body>
+
+</html>

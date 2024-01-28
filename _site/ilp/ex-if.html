@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Exercícios: if/else/elif</title>
+  <meta name="description" content="Material de disciplinas.
+">
+  
+  <link rel="stylesheet" href="/aulas/css/main.css">
+  <script type="text/javascript" src="/aulas/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/aulas/lib/jquery-ui/jquery-ui.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/aulas/lib/jquery-ui/jquery-ui.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="/aulas/lib/simple-hint/simple-hint.min.css">
+  
+  <script type="text/javascript" src="/aulas/lib/confetti/confetti.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin' rel='stylesheet' type='text/css' />
+
+  
+<script src="/aulas/lib/codemirror/codemirror.js"></script>
+<script src="/aulas/lib/codemirror/addon/edit/matchbrackets.js"></script>
+<link rel="stylesheet" href="/aulas/lib/codemirror/codemirror.css">
+<link rel="stylesheet" href="/aulas/lib/codemirror/addon/hint/show-hint.css">
+<link rel="stylesheet" href="/aulas/lib/codemirror/addon/lint/lint.css">
+<script type="text/javascript" src="/aulas/lib/editors/editors-codemirror.js"></script>
+
+
+
+
+
+
+
+<script src="/aulas/lib/codemirror/mode/python/python.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"></script>
+<script type="text/javascript" src="/aulas/lib/editors/eval-python.js"></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/aulas/css/triple.css">
+<script type="text/javascript" src="/aulas/lib/triple-page.js"></script>
+
+
+
+<script type="text/javascript" src="/aulas/lib/ezsubmission/ezsubmission.js"></script>
+<script type="text/javascript" src="/aulas/lib/submissao/submissao2.js"></script>
+<script>
+  document.hasLogin = true
+</script>
+
+
+  
+  <link rel="canonical" href="http://localhost:4000/aulas/ilp/ex-if.html">
+  <link rel="alternate" type="application/rss+xml" title="Disciplinas (UFBA)" href="http://localhost:4000/aulas/feed.xml">
+</head>
+
+    
+    <body>
+        <script type="text/javascript">
+            document.triplePage = true;
+        </script>
+
+        <div class="painel" x-data>
+            <input type="button" class="btn-back" value="Anterior"
+                    x-bind:disabled="$store.triple.isFirstPage()"
+                    @click="$store.triple.move(-1);"/>
+            <input type="button" class="btn-fwd" value="Próximo"
+                    x-bind:disabled="$store.triple.isLastPage()"
+                    @click="$store.triple.move(1);"/>
+            <span>
+                <span x-text="$store.triple.currentPage + 1">0</span> /
+                <span x-text="$store.triple.pages.length">0</span>
+            </span>
+             &mdash;
+            <span>
+                <span x-show="$store.submission.wasSaved($store.triple.currentPage)">
+                    Salvo em
+                    <span x-text="$store.submission.getSubmissionTimestamp($store.triple.currentPage)"></span>
+                    </span>
+                </span>
+                <span x-show="!$store.submission.wasSaved($store.triple.currentPage)">
+                    Ainda não foi salvo
+                </span>
+            </span>
+            <!-- <input type="button" id="expandeEditor" value="Expandir editor"/> -->
+        </div>
+        
+        <header class="site-header">
+
+  <div class="wrapper">
+
+    <div>
+    <a class="site-title" href="/aulas/">Disciplinas (UFBA)</a>
+
+    <span class="page-title">Exercícios: if/else/elif</span>
+    </div>
+
+    
+    
+    <div x-data x-show="$store.submission.hasSubmission" style="float: right;">
+      <div id="loginbar">
+        <span class="loginbar-logout" x-show="$store.submission.username">
+          <span>User:</span>
+          <span class="loginbar-username" x-text="$store.submission.username || '?'">?</span>
+          <button onclick="logout();">Logout</button>
+          <!-- <button onclick="enviaRespostasTotal();">Enviar respostas</button> -->
+          <!-- <button onclick="carregaRespostasTotal();">Carregar respostas</button> -->
+          <button onclick="proximaResposta(-1);" x-show="$store.submission.isAdmin">&lt;</button>
+          <button onclick="proximaResposta(1);" x-show="$store.submission.isAdmin">&gt;</button>
+          <!-- <a onclick="clickStats(this);">Stats</a> -->
+        </span>
+        <span class="loginbar-login" x-show="!$store.submission.username">
+          <button onclick="showLogin();">Login</button>
+        </span>
+      </div>
+      <div id="dialog" title="Login" style="display: none">
+      <form autocomplete="off">
+        <input id="username" type="text" size="25" placeholder="Username" /><br/>
+        <input id="password" type="password" size="25" placeholder="Password" /><br/>
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
+      </form>
+      </div>
+      <div id="codeDialog" title="Informações" style="display: none">
+        <div id="codeDialogText"></div>
+      </div>
+    </div>
+
+    <script>
+      window.hasSubmission = true;
+
+      loginDialog = jQuery("#dialog");
+      loginDialog.find("form").on("submit", function (evt) {
+        evt.preventDefault();
+        submitLoginDialog();
+      });
+    </script>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+        <div class=postpost-content">
+            <h2 id="senha">Senha</h2>
+
+<p>O programa ao lado contém um erro. Corrija o programa para que ele aceite apenas a senha <code class="language-plaintext highlighter-rouge">12345</code>.</p>
+
+<textarea class="code lang-python">
+senha = input()
+if senha == '12345'
+  print("Senha correta")
+print("Fim")
+</textarea>
+
+<textarea class="stdin">senha123</textarea>
+
+<div class="testcases">
+12345]]]Senha correta\nFim=====
+qwerty]]]Fim=====
+</div>
+
+<h2 id="desconto">Desconto</h2>
+
+<p>O programa ao lado contém um erro. Dada uma quantidade e um preço unitário, o programa deveria imprimir o valor final da compra, concedendo 10% de desconto na compra de 20 ou mais unidades. Corrija o programa.</p>
+
+<textarea class="code lang-python">
+qtd = int(input())
+preco_unitario = float(input())
+desconto = 0
+
+if qtd &gt;= 20:
+desconto = 0.1
+
+valor = preco_unitario * qtd * (1 - desconto)
+print(f"{valor:.2f}")
+</textarea>
+
+<textarea class="stdin">10
+15.0</textarea>
+
+<div class="testcases">
+10\n15.0]]]150.00=====
+20\n0.50]]]9.00=====
+</div>
+
+<h2 id="adivinhe-o-número">Adivinhe o número</h2>
+
+<p>O programa ao lado está errado. Corrija-o para imprimir <code class="language-plaintext highlighter-rouge">Correto</code> somente quando o número digitado for <code class="language-plaintext highlighter-rouge">42</code>.</p>
+
+<textarea class="code lang-python">
+numero = int(input())
+
+if numero = 42:
+  print("Correto")
+</textarea>
+
+<textarea class="stdin">44</textarea>
+
+<div class="testcases">
+41]]]=====
+42]]]Correto=====
+43]]]=====
+</div>
+
+<h2 id="apenas-para-adultos">Apenas para adultos</h2>
+
+<p>Determinada atividade é permitida apenas para adultos menores de 70 anos. Modifique o programa para escrever “permitido” ou “proibido”, a depender da idade digitada. Ao final, o programa deve escrever “fim”.</p>
+
+<textarea class="code lang-python">
+idade = int(input())
+
+print("corrija o programa")
+</textarea>
+
+<textarea class="stdin">15</textarea>
+
+<div class="testcases">
+15]]]proibido\nfim=====
+18]]]permitido\nfim=====
+69]]]permitido\nfim=====
+70]]]proibido\nfim=====
+71]]]proibido\nfim=====
+</div>
+
+<h2 id="faixa-etária">Faixa etária</h2>
+
+<p>Crie um programa que classifica uma pessoa em uma das seguintes categorias, de acordo com a idade: “bebê”, “criança”, “adolescente”, “adulta”. Considere o seguinte:</p>
+
+<ul>
+  <li>bebê: 0 a 1 ano</li>
+  <li>criança: 2 a 11 anos</li>
+  <li>adolescente: 12 a 17 anos</li>
+  <li>adulta: 18 anos ou mais</li>
+</ul>
+
+<textarea class="code lang-python">
+idade = int(input())
+
+if idade &lt;= 1:
+  print("bebê")
+elif idade &lt;= 11:
+  print("criança")
+</textarea>
+
+<textarea class="stdin">1</textarea>
+
+<div class="testcases">
+0]]]bebê=====
+1]]]bebê=====
+2]]]criança=====
+11]]]criança=====
+12]]]adolescente=====
+17]]]adolescente=====
+18]]]adulta=====
+81]]]adulta=====
+</div>
+
+        </div>
+
+        <div id="triple-container"></div>
+
+    </body>
+
+</html>
