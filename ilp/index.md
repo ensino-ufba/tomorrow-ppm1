@@ -15,7 +15,7 @@ title:
   - [Entrada e saída](01c-entrada-saida)
   - [Entrada e saída para problemas de correção automática](https://docs.google.com/presentation/d/1wTuChjtp-tPVXElQVtBanVULWNsoeN-vDv9C2ZK_5Vo/edit?usp=sharing)
 - [Condicionais (if/else)](02-if-else)
-- [Estruturas de repetição (while/for)](https://docs.google.com/presentation/d/1fIC4ntPE-z-rJNGRwaMYT6U64yitrdRe7SORdhAXNDo/edit?usp=sharing)
+- [Estruturas de repetição (while/for)](03-repeticao)
 - [Funções](https://docs.google.com/presentation/d/1WwM1eyjoHY1AjlFB-QMLRkpf282d8reQ_gSj32hWo-k/edit)
 
 <!--
@@ -37,4 +37,6 @@ title:
 - [Listas](ex-listas)
 -->
 
-
+<!--
+- [Estruturas de repetição (while/for)](https://docs.google.com/presentation/d/1fIC4ntPE-z-rJNGRwaMYT6U64yitrdRe7SORdhAXNDo/edit?usp=sharing)
+-->
