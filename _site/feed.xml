@@ -1,2 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/aulas/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/aulas/" rel="alternate" type="text/html" /><updated>2024-01-28T19:17:12-03:00</updated><id>http://localhost:4000/aulas/feed.xml</id><title type="html">Disciplinas (UFBA)</title><subtitle>Material de disciplinas.
-</subtitle></feed>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Disciplinas (UFBA)</title>
+    <description>Material de disciplinas.
+</description>
+    <link>http://localhost:4000/aulas/</link>
+    <atom:link href="http://localhost:4000/aulas/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 28 Jan 2024 19:40:38 -0300</pubDate>
+    <lastBuildDate>Sun, 28 Jan 2024 19:40:38 -0300</lastBuildDate>
+    <generator>Jekyll v4.3.3</generator>
+    
+  </channel>
+</rss>

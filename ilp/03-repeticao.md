@@ -10,6 +10,7 @@ template: inverse
 
 {% include_relative footer.txt %}
 
+---
 # Motivação
 
 ## Estrutura `for`
@@ -70,10 +71,12 @@ for i in range(n):
 A cada repetição, a variável de controle assume o próximo valor da sequência
 
 ```python
-for i in range(5):
+for
+ i in range(5):
     bloco de instruções...
 ```
 
+---
 variável de controle
 
 sequência 0, 1, 2, 3, 4
@@ -84,7 +87,7 @@ Exemplo: imprimir números de 0 a 4
 for i in range(5):
   print(i)
 ```
-
+---
 Exemplo: imprimir números de 1 a 5
 
 ```python
@@ -92,6 +95,7 @@ for i in range(5):
   print(i+1)
 ```
 
+---
 Exemplo: programa que imprime a tabuada de 9
 
 ```python
@@ -99,10 +103,11 @@ for i in range(10):
   print(f"9 * {i} = {9 * i}")
 ```
 
+---
 ## range
 A função range gera uma sequência de números.
 
-Até agora vimos que range(n) gera a sequência 0, 1, 2, …, n - 1
+Até agora vimos que range(n) gera a sequência 0, 1, 2, ..., n - 1
 A forma mais completa é:
 
 ```python
@@ -111,7 +116,7 @@ A forma mais completa é:
 
 que gera uma sequência do número inicio até o número fim (não incluso), contando de passo em passo.
 
-
+---
 ## range
 Exemplos:
 
@@ -125,6 +130,7 @@ range(0, 10, 2)  gera 0, 2, 4, 6, 8   (de 2 em 2)
 range(0, 9, 3) gera 0, 3, 6
 ```
 
+---
 ## Exercício
 
 Crie um programa para escrever a seguinte letra de música:
@@ -139,6 +145,8 @@ Crie um programa para escrever a seguinte letra de música:
 e assim por diante, até chegar a 10 elefantes
 
 ## Exercícios
+
+---
 
 # Estrutura `while`
 
@@ -161,6 +169,7 @@ Informalidade da linguagem: na instrução 4, quais instruções devem ser repet
 A instrução 4 cria um ciclo (loop) na execução do programa. 
 P: desenhar ciclo; escrever a palavra LOOP
 
+---
 
 `While` significa enquanto. “Enquanto a condição for verdadeira, execute as seguintes instruções”.
 
@@ -171,6 +180,7 @@ P: desenhar ciclo; escrever a palavra LOOP
 
 As estruturas de repetição também são chamadas de laços ou loops
 
+---
 # Estrutura while
 
 `While` funciona como um `if`, sendo que no final do bloco de instruções o programa “pula” para o início da estrutura
@@ -192,7 +202,7 @@ P: circular estrutura while. Perguntar: qual é a condição? Circular condiçã
 
 Essa instrução “variável recebe valor da variável mais um” é tão comum os programadores criaram uma forma abreviada de escrevê-la: “variável mais mais”. P: rabiscar
 
-
+---
 # Elementos de um loop
 
 ```python
@@ -207,6 +217,7 @@ Você não pode simplesmente escrever uma estrutura de loop
 P: circular ocorrências da variável “i”
 A variável de controle, nesse caso, também é chamada de “contador” (pois é uma variável numérica que está incrementando ou decrementando)
 
+--- 
 ```python
 i = 1
 while i <= 3:
@@ -222,6 +233,7 @@ Encontre o erro!
 P: escrever LOOP INFINITO
 O programa é equivalente a while (true) { cout << 3 << endl; }
 
+---
 ### Encontre o erro
 
 ```python
@@ -231,7 +243,7 @@ while i <= 3:
   i = i + 1
 print("Fim")
 ```
-
+---
 ### Encontre o erro
 - O que está errado nesse programa?
 - O que vai acontecer se você executar esse programa?
@@ -246,12 +258,13 @@ while i >= 8:
 
 print("Fim")
 ```
-
+---
 ## Encontre o erro (programa para contar de 3 a 8)
 
 Encontre o erro!
 Inversão do operador relacional. O loop não executa
 
+---
 ## Exercícios
 
 Usando estruturas de repetição, crie um programa para...
@@ -263,10 +276,12 @@ Usando estruturas de repetição, crie um programa para...
 - Escrever a sequência 1, 2, 3, 4, 4, 3, 2, 1
 - Escrever 5 vezes: note que nesse caso o bloco de instruções não referencia a variável de controle
 
+---
 Usando estruturas de repetição, crie um programa para...
 - Ler números enquanto eles formarem uma sequência crescente; parar quando for digitado um número igual ou menor que o anterior
 - Jogar “adivinhe o número”: o programa possui um número secreto, entre 0 e 100. O jogador deve tentar adivinhar o número sucessivamente, até acertar. Para cada tentativa, o programa deve informar se o número secreto é maior ou menor do que o número informado.
 
+---
 # Exercícios
 
 ## Dicas para problemas de correção automática
@@ -276,6 +291,7 @@ Usando estruturas de repetição, crie um programa para...
    - O primeiro valor indica quantos números serão fornecidos na entrada
    - É usado um valor especial para indicar o final da entrada
 
+---
 ### Indicação da quantidade de números da entrada
 
 ```python
@@ -312,6 +328,7 @@ for i in range(n):
 
 6
 
+---
 ## Programa dobro
 
 Dada uma lista de N inteiros, imprima o dobro de cada número.
@@ -324,6 +341,7 @@ Seu programa deve produzir N linhas na saída, contendo o dobro de cada um dos N
 
 Não precisa ler toda a entrada antes de imprimir a saída. Pode-se intercalar ler e escrever.
 
+---
 ## Valor especial (sentinela) indicando fim da entrada
 
 ```python
@@ -342,7 +360,9 @@ A entrada é composta de várias linhas, cada uma com um número da sequência. 
 ### Saída
 
 Para cada linha da entrada (exceto o 0), seu programa deve imprimir uma linha com o dobro do número lido.
-Entrada
+
+---
+### Entrada
 
 ### Saída
 1
@@ -355,10 +375,11 @@ Entrada
 2
 -1
 0
-4
+
 -2
 cin >> i, i != 0
 
+---
 ### Acessando cada valor em uma linha com vários valores
 Escreva um programa que lê uma frase e imprime cada palavra dessa frase em uma linha
 
@@ -369,6 +390,7 @@ Você pode acessar cada string dessa lista usando o for. Veja o exemplo:
 ### Entrada
 ### Saída
 
+---
 # Outras instruções: break e continue
 
 As instruções `break` e `continue` permitem alterar o fluxo de execução normal de um loop (seja for ou while)
@@ -377,6 +399,7 @@ Observações:
 - Em geral é possível escrever programas sem usar essas instruções
 - Em geral o seu uso deve ser evitado, pois tende a tornar o código mais difícil de entender (sobretudo em loops com muitas linhas de código)
 
+---
 ```python
 while True:
    n = int(input())
@@ -388,10 +411,12 @@ print("Fim")
 
 Dentro de qualquer estrutura de repetição, é possível usar a instrução break para sair do loop
 
+---
 # break
 
 Loop infinito. Mostrar também for (;;)
 
+---
 # continue
 Dentro de qualquer estrutura de repetição, é possível usar a instrução continue para voltar para o início do loop
 
@@ -401,6 +426,7 @@ for i in range(1, 10):
        continue
    print(i)
 
+---
 # Tópicos avançados
 
 # Iterações, acumuladores e invariantes de loop
@@ -417,6 +443,8 @@ No exemplo a seguir, responda:
 for i in range(4, 10, 2):
    print(i)
 ```
+
+---
 # Conceito: invariante de loop
 
 Um invariante de loop é uma condição que é verdadeira para todas as iterações de um loop
@@ -427,6 +455,7 @@ for i in range(4, 10, 2):
    print(i)
 ```
 
+---
 ## Dada uma lista de N inteiros, encontre a soma de todos eles.
 ### Entrada
 A entrada é composta de várias linhas, cada uma com um número. O primeiro número é um inteiro positivo N. Os N números seguintes são valores inteiros X que devem ser somados.
@@ -434,6 +463,7 @@ A entrada é composta de várias linhas, cada uma com um número. O primeiro nú
 ### Saída
 Seu programa deve produzir uma única linha na saída, contendo a soma de todos os N inteiros.
 
+---
 # Problema SOMA - adaptado de https://br.spoj.com/problems/SOMA/
 
 Entrada
@@ -448,6 +478,7 @@ Saída
 3
 9
 
+---
 # Invariante de loop:
 
 Ao final da i-ésima iteração, a variável soma contém a soma dos primeiros i números.
@@ -460,6 +491,7 @@ for i in range(n):
    soma += x
 print(soma)
 ```
+---
 
 # Acumulador
 
@@ -480,6 +512,7 @@ X:
 +
 +
 
+---
 ## Dada uma lista de N inteiros não-negativos distintos entre si, encontre o maior de todos eles.
 
 ### Entrada
@@ -488,6 +521,7 @@ A entrada é composta de vários números em linhas diferentes. O primeiro núme
 # Saída
 Seu programa deve produzir uma única linha na saída, contendo o maior de todos os N inteiros.
 
+---
 # Problema MÁXIMO - adaptado de https://br.spoj.com/problems/SOMA/
 Invariante de loop: Ao final da i-ésima iteração, a variável maior contém o maior dos primeiros i números
 
@@ -500,6 +534,7 @@ for i in range(n):
 print(maior)
 ```
 
+---
 // Alternativa:
 ```python
 if x > maior:
@@ -531,6 +566,7 @@ max
 max
 max
 
+---
 # Loops aninhados
 
 As estruturas de repetição são consideradas instruções.
@@ -559,6 +595,7 @@ A saída deve obedecer ao seguinte formato:
 
 5 x 9 = 45
 
+---
 # Exemplo: tabela de multiplicação
 
 - tabuada de 1
@@ -566,7 +603,7 @@ A saída deve obedecer ao seguinte formato:
 - ...
 P: circular variáveis
 
-
+---
 ## Pensando “de fora pra dentro”
 
 <img src="03-fig-tabuada.png" width="100%">
@@ -582,6 +619,7 @@ for i in range(1, 6):
 
 }
 
+---
 // escrever a tabuada de i
 for j in range(1, 10):
     print(i, "x", j, "=", (i * j))
@@ -600,6 +638,7 @@ for i in range(1, 6):
 - Encontre o erro!
 segundo loop, está i <= 9 (deveria ser j <= 9)
 
+---
 ## Exercício
 
 Leia dois números inteiros, L e C, e imprima um retângulo composto apenas de caracteres #, com L linhas e C colunas.
@@ -615,6 +654,8 @@ Saída
 #
 #
 #
+
+---
 
 ## Exercício
 
