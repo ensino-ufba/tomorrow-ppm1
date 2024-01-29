@@ -16,7 +16,7 @@
 title: Disciplinas (UFBA)
 email: christina.flach@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
- Material de disciplinas.
+ Material do Curso.
 baseurl: "/tomorrow-ppm1" # the subpath of your site, e.g. /blog
 
 
