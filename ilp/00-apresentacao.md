@@ -1,6 +1,6 @@
 ---
 layout: remark
-title: Introdução à Programação
+title: Introdução à Programação com Python
 ---
 {::nomarkdown}
 template: inverse
@@ -56,6 +56,11 @@ template: inverse
 - Uso da linguagem de programação Python
 - Exercícios com correção automática
 - Aulas práticas e teóricas
+
+---
+
+# Leituras
+
 
 
 {:/}
