@@ -11,6 +11,7 @@ seus primeiros programas com a biblioteca Turtle.
 - [Replit Sandbox](https://replit.com/@Christinavon/TediousSandbox)
 
 - [Python Turtle](https://docs.python.org/3/library/turtle.html#)
+   -  `python3 -m turtledemo`
 
 - [Jude](http://jude.dcc.ufba.br/)
 - [Jude - lista 1](http://jude.dcc.ufba.br/app/contests/375)
