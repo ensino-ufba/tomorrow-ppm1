@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Introdução à Programação em Python
+title: Introdução à Programação em Python para Meninas
 ---
 
 ### Slides

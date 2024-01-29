@@ -1,6 +1,6 @@
 ---
 layout: remark
-title: Introdução à Programação
+title: Introdução à Programação com Python para Meninas
 ---
 {::nomarkdown}
 template: inverse
