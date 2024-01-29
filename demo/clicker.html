@@ -1,0 +1,72 @@
+---
+layout: page
+title:  "ABC"
+features: [clicker]
+---
+
+<div id="regular">
+  <button class="clicker" onclick="submitClickerAnswer('A');">A</button>
+  <button class="clicker" onclick="submitClickerAnswer('B');">B</button>
+  <button class="clicker" onclick="submitClickerAnswer('C');">C</button>
+  <button class="clicker" onclick="submitClickerAnswer('D');">D</button>
+  <button class="clicker" onclick="submitClickerAnswer('E');">E</button>
+  <button class="clicker" onclick="submitClickerAnswer('F');">F</button>
+</div>
+
+<script>
+  function submitClickerAnswer(value) {
+    postSubmit({question_type: "clicker", submition_type: "single", answer: value})
+      .done(() => alert("Resposta enviada."))
+      .fail((xhr) => {
+        alert("Erro ao enviar resposta. " + xhr.responseText);
+      });
+  }
+</script>
+
+<div id="admin">
+  <div id="answers"></div>
+  <br>
+  <button class="go" onclick="closeCurrent();">Close current</button> 
+  <button class="go" onclick="openNext();">Open next</button><br>
+</div>
+
+<script>
+  function closeCurrent() {
+    postSubmit({question_type: "control", answer: "close"})
+      .done(() => alert("OK.")).fail((xhr) => alert("Erro. " + xhr.responseText));
+  }
+  function openNext() {
+    postSubmit({question_type: "control", answer: "open"})
+    .done(() => alert("OK.")).fail((xhr) => alert("Erro. " + xhr.responseText));
+  }
+  function updateAnswers() {
+    const elem = document.getElementById("answers");
+    postSubmit({}, "get-answer-count.php")
+      .done((data) => {
+        data = JSON.parse(data);
+        let s = "";
+        for (let item of data) {
+          s += `${item.answer}: ${"#".repeat(item.count)}<br>`;
+        }
+        elem.innerHTML = s;
+      })
+      .fail((xhr) => alert("Erro. " + xhr.responseText));
+  }
+</script>
+
+<script>
+  if (submissionSession.isAdmin()) {
+    document.getElementById("admin").style.display = "block";
+    document.getElementById("regular").style.display = "none";
+
+    updateAnswers();
+  } else {
+    document.getElementById("admin").style.display = "none";
+    document.getElementById("regular").style.display = "block";
+  }
+</script>
+
+<div>
+  <br>
+  Esta página está disponível em <a href="https://a.ufba.br/abc">a.ufba.br/abc</a>.
+</div>
