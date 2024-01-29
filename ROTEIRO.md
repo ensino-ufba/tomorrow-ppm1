@@ -9,6 +9,9 @@ seus primeiros programas com a biblioteca Turtle.
 - [Exercícios de fixação](https://ensino-ufba.github.io/tomorrow-ppm1/ilp/ex-introducao)
 
 - [Replit Sandbox](https://replit.com/@Christinavon/TediousSandbox)
+
+- [Python Turtle](https://docs.python.org/3/library/turtle.html#)
+
 - [Jude](http://jude.dcc.ufba.br/)
 - [Jude - lista 1](http://jude.dcc.ufba.br/app/contests/375)
 
