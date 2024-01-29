@@ -18,23 +18,20 @@ template: inverse
 
 ---
 
-# Desenhar Quadrado (sem repetição)
+# Desenhar Quadrado (1)
 
 <img src="./figs2/scratch2.png" width="30%">
 
 ---
 
-# Desenhar Quadrado (com repetição)
+# Desenhar Quadrado (2)
 
 
 <img src="./figs2/scratch1.png" width="40%">
 
 ---
 
-# Desenhar Quadrado com Turtle (com repetição)
-
-<img src="./figs2/turtle2.png" width="30%">
-
+# Desenhar Quadrado com Turtle (1)
 
 ```python
 from turtle import *
@@ -56,11 +53,7 @@ x = input()
 
 ---
 
-# Desenhar Quadrado com Turtle (sem repetição)
-
-<img src="./figs2/turtle1.png" width="30%">
-
----
+# Desenhar Quadrado com Turtle (2)
 
 ```python
 from turtle import *
