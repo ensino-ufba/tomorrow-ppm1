@@ -7,7 +7,7 @@ title: Introdução à Programação em Python para Meninas
 
 - [Motivação](https://docs.google.com/presentation/d/1L70pAPrIstAOukWUIAEPKGXnzVXo46hV4m6BVAWkdnY/edit)
    - [Exemplo](0-scratch-python)
-- [Apresentação](00-apresentacao)
+- [Apresentação](0-apresentacao)
 - [Introdução à programação](00a-intro-programacao)
 - [Introdução à linguagem Python](00b-intro-python)
 - [Variáveis](01a-variaveis)
