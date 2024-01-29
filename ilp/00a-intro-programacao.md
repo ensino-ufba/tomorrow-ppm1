@@ -18,7 +18,6 @@ Um **algoritmo** é uma sequência de passos bem definidos para resolver um prob
 - Receita de bolo
 - Manual de produto
 - Processo de matrícula
-- Como resolver o cubo de Rubik
 
 <!-- Algoritmos devem ser expressos dentro de uma quantidade **finita** de espaço e tempo. -->
 
@@ -43,7 +42,7 @@ Pessoas geralmente trabalham com **código-fonte**, isto é, programas escritos 
 Um **compilador** ou **intepretador** é um programa que transforma código-fonte em código de máquina.
 
 - O compilador faz isso de uma vez só, gravando o código de máquina em um arquivo executável
-- O interpretador transforma o código enquanto o executa
+- O interpretador transforma o código enquanto o executa.
 
 Um programa que é interpretado também é chamado de **script**.
 
