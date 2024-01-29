@@ -13,7 +13,9 @@ template: inverse
 
 # Algoritmo
 
-Um **algoritmo** é uma sequência de passos bem definidos para resolver um problema. Exemplos:
+Um **algoritmo** é uma sequência de passos bem definidos para resolver um problema. 
+
+### Exemplos
 
 - Receita de bolo
 - Manual de produto

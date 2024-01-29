@@ -33,6 +33,8 @@ title:
 - [Condicionais (if/else)](ex-if)
 - [Repetição (for/while)](ex-for-while)
 
+- [Entrada e Saída - Correção Automática](01d-entrada-saida-correcao)
+
 <!--
 - [Listas](ex-listas)
 -->

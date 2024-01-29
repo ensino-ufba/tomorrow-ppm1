@@ -54,8 +54,8 @@ Se quiser experimentar sem instalar nada, use algum desses sites:
 - Se você instalou o Python no seu computador, ele vem com um editor chamado **IDLE**
 - Ao abrir o IDLE, deve aparecer uma janela mais ou menos assim:
 
-<img src="python-idle.png" width="100%">
-![](python-idle.png)
+<img src="./figs/python-idle.png" width="100%">
+![](./figs/python-idle.png)
 ---
 
 # Modo shell
