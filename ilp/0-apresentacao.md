@@ -30,13 +30,6 @@ Segundo o relatório,
 - Na área tecnológica de inteligência artificial (IA), as mulheres representam apenas 22% da força de trabalho.
 - Na área de computação em nuvem, as mulheres representam 14% das pessoas que trabalham em tais cargos.
 
-
----
-<img src="./figs/00-PPM.png" alt="image" width="100%">
-
----
-<img src="./figs/fig-meninas-digitais-2.png" alt="image" width="100%">
-
 ---
 
 # Na Bahia
@@ -45,7 +38,13 @@ Segundo o relatório,
 
    - "Em 2020, do total de 557.441 matriculados, 300.916 eram do sexo feminino (53,98%) e 256.525 (46,02%), do sexo masculino."
 
-- UFBA: Cerca de 10 mulheres por ano no curso de Ciência da Computação
+- UFBA: Em geral, 10 mulheres ingressam  no curso de Ciência da Computação por ano (Pouco mais de 10%)
+
+---
+<img src="./figs/00-PPM.png" alt="image" width="100%">
+
+---
+<img src="./figs/fig-meninas-digitais-2.png" alt="image" width="100%">
 
 ---
 # Valores
