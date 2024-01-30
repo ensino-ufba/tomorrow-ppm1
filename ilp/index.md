@@ -13,9 +13,10 @@ title: Introdução à Programação em Python para Meninas
 - [Variáveis](01a-variaveis)
 - [Expressões aritméticas e formatação de strings](01b-expressoes)
 - [Entrada e saída](01c-entrada-saida)
-- [Correção automática - entrada e saída](01d-entrada-saida-correcao)
+   - [Correção automática - Padrões de entrada e saída](01d-entrada-saida-correcao)
 - [Condicionais (if/else)](02-if-else)
 - [Estruturas de repetição (while/for)](03-repeticao)
+- Listas
 - [Funções](https://docs.google.com/presentation/d/1WwM1eyjoHY1AjlFB-QMLRkpf282d8reQ_gSj32hWo-k/edit)
 
 <!--
@@ -32,6 +33,7 @@ title: Introdução à Programação em Python para Meninas
 - [Introdução](ex-introducao)
 - [Condicionais (if/else)](ex-if)
 - [Repetição (for/while)](ex-for-while)
+- Listas
 
 ### Correção automática
 
