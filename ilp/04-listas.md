@@ -51,7 +51,7 @@ A **lista** é um tipo de dados usado para armazenar coleções de dados.
    - Lista vazia: `[]`
    - Uma lista com 1 elemento: `[10]`
    - Uma lista com 2 elementos: `[10,20]`
-   - Uma lista com 3 elementos de tipos diferentes: `["Maria", 10, 20.0]`
+   - Uma lista com 3 elementos de tipos diferentes: ```['Maria', 10, 20.0]```
 
 ---
 
@@ -62,9 +62,9 @@ A **lista** é um tipo de dados usado para armazenar coleções de dados.
 ```python
 vazia = []
 notas = [9.8, 7.5, 8.3]
-nomes = ["Fulano", "Sicrana", "Beltrana"]
+nomes = ['Fulano', 'Sicrana', 'Beltrana']
 notasenomes = [notas, nomes]
-usuarios = [["usuario", "senha"], ["admin", "123"]]
+usuarios = [['usuario', 'senha'], ['admin', '123']]
 ```
 
 --- 
@@ -77,7 +77,7 @@ usuarios = [["usuario", "senha"], ["admin", "123"]]
 >>> [0] * 4
 [0,0,0,0]
 
->>> ["a", "b"] * 2
+>>> ['a', 'b'] * 2
 [ 'a', 'b', 'a', 'b']
 ```
 
@@ -85,7 +85,7 @@ usuarios = [["usuario", "senha"], ["admin", "123"]]
 
 # Comprimento da lista (len)
 
-Use a função `len(x)` para obter o comprimento de uma lista x.
+Use a função `len(x)` para obter o comprimento de uma lista `x`.
 
 ```
 >>> lista = [2,2,2,2]
@@ -143,7 +143,7 @@ o número de elementos da lista, o erro `ValueError` será reportado.
 Pode-se alterar um elemento da lista realizando uma atribuição:
 
 ```python
-x = ["a", "b", "c"]  # lista original com 3 elementos
+x = ['a', 'b', 'c']  # lista original com 3 elementos
 x[0] = 'Z'   # modifica apenaso valor  do primeiro elemento da lista
 x[3] = 'W'   # IndexError: list assignment index out of range
 ```
