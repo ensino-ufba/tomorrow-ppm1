@@ -126,7 +126,7 @@ print(total)
 ---
  
 
-# if: Exemplo anterior com comentários no texto
+# if: Usar comentários (exemplo anterior)
 
 ```python
 # Entrada
@@ -149,7 +149,8 @@ print(total)
 
 # if: Mais um exemplo
 
-Escreva um programa que, dado o ano atual, o ano de nascimento da pessoa, e sabendo se ela já fez aniversário no ano atual, imprime a idade da pessoa.
+Escreva um programa que, dado o ano atual, o ano de nascimento da pessoa, 
+e sabendo se ela já fez aniversário no ano atual, imprime a idade da pessoa.
 
 Entrada: ano atual, ano de nascimento, e a string `S` (se já fez aniversário no ano atual) ou `N` (caso contrário).
 
