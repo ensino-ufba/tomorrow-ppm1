@@ -16,7 +16,7 @@ title: Introdução à Programação em Python para Meninas
    - [Correção automática - Padrões de entrada e saída](01d-entrada-saida-correcao)
 - [Condicionais (if/else)](02-if-else)
 - [Estruturas de repetição (while/for)](03-repeticao)
-- Listas
+- [Listas](04-listas)
 - [Funções](https://docs.google.com/presentation/d/1WwM1eyjoHY1AjlFB-QMLRkpf282d8reQ_gSj32hWo-k/edit)
 
 <!--
