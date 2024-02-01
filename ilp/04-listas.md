@@ -252,12 +252,11 @@ for n in numeros:
    print(n)
 ```
 ---
+
 ## Transformar ou filtrar elementos de listas
 
 **List comprehensions** são usadas para 
 _transformar_ e _filtrar_ elementos de listas.
-
-- **List comprehensions**
 
 ### Transformando elementos
 
