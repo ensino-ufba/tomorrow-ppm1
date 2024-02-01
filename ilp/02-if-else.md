@@ -21,22 +21,30 @@ Em Python, usamos as palavras-chave `if` (se), `else` (caso contrário) e `elif`
 
 ---
 
-# if: seleção simples
+# Seleção simples
 
-Do inglês, *se* (conjunção subordinativa condicional)
 
-Sintaxe:
+<img src="./figs/fig-if-flow.png" alt="image" width="100%">
+
+- Significado: se a `condicao` for verdadeira (`True`),  o `bloco de código` (sequência de instruções) é executado.
+
+---
+
+# if: seleção simples em Python
+
+Do inglês, `if` significa **se**.
+
+- Sintaxe:
 
 ```c++
 if condicao:
     bloco de código
 ```
 
-- Significado: o `bloco de código` (sequência de instruções) é executado somente se a `condicao` for verdadeira
-
 - Depois da condição deve vir um sinal de dois-pontos (`:`)
 - A sequência de instruções deve estar indentada em relação à palavra `if` (isto é, deve estar mais à direita)
 
+- Significado: o `bloco de código` (sequência de instruções) é executado somente se a `condicao` for verdadeira
 ---
 
 # if
@@ -126,7 +134,7 @@ print(total)
 ---
  
 
-# if: Usar comentários (exemplo anterior)
+# if: Exemplo anterior comentado
 
 ```python
 # Entrada
@@ -183,7 +191,8 @@ if idade < 18:
     print("Você não é adulto.")
 ```
 
-Note que as condições são opostas. Nesse caso podemos usar a estrutura `if`/`else`, que veremos a seguir.
+Note que as condições são complementares. 
+Nesse caso, pode-se usar a estrutura `if-else`.
 
 ---
 
