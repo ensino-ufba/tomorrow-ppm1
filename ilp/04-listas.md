@@ -113,11 +113,11 @@ pode-se usar uma atribuição com diversas variáveis.
 
 ```python
 lista = [2, 4, 6]
-x, y, z = lista     # sabe-se que a lista possui 3 elementos
+x, y, z = lista  
 ```
 
 Se o número de variáveis do lado esquerdo do símbolo `=` não coincidir com 
-o número de elementos da lista, o erro `ValueError` será reportado.
+o número de elementos da lista, o erro *ValueError** será reportado.
 
 ---
 
@@ -240,12 +240,24 @@ L3 = L1 + L2   # Cria uma nova lista L3; L1 e L2 não são modificadas
 print(L3)
 
 ```
-
 ---
-## List comprehensions
+
+# Listas são usadas com for e while
+
+Listas são frequentemente usadas em conjunto com estruturas de repetição, sobretudo o `for`.
+
+```python
+numeros = [5, 3, 8, 1]
+for n in numeros:
+   print(n)
+```
+---
+## Transformar ou filtrar elementos de listas
 
 **List comprehensions** são usadas para 
 _transformar_ e _filtrar_ elementos de listas.
+
+- **List comprehensions**
 
 ### Transformando elementos
 
