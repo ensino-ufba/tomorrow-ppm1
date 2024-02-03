@@ -12,22 +12,33 @@ template: inverse
 
 ---
 
+# Desenhar quadrado
+
+- 4 lados, todos com mesmo comprimento
+- Ângulos internos: 90 graus
+
+
+## Algoritmo
+
+
+---
+
 # Scratch IDE
 
-<img src="./figs2/scratch-ide.png" width="100%">
+<img src="./figs/scratch-ide.png" width="100%">
 
 ---
 
 # Desenhar Quadrado (1)
 
-<img src="./figs2/scratch2.png" width="30%">
+<img src="./figs/scratch2.png" width="30%">
 
 ---
 
 # Desenhar Quadrado (2)
 
 
-<img src="./figs2/scratch1.png" width="40%">
+<img src="./figs/scratch1.png" width="40%">
 
 ---
 

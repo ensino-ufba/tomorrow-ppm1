@@ -35,7 +35,7 @@ title: Introdução à Programação em Python para Meninas
 - [Introdução](ex-introducao)
 - [Condicionais (if/else)](ex-if)
 - [Repetição (for/while)](ex-for-while)
-- Listas
+- [Listas](ex-listas)
 
 ### Correção automática
 
