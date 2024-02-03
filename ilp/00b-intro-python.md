@@ -140,11 +140,13 @@ Você pode usar o IDLE para desenvolver qualquer programa em Python, mas program
 
 ---
 
-## Não deixe de olhar
+# Não deixe de olhar
 
 - [Página Oficial da Comunidade Python](https://www.python.org/). 
 - [Bibliotecas: Python Package Index (PyPI)](https://pypi.org/)
 - [pyflo](https://pyflo.net/)
+
+---
 
 # Referências
 
