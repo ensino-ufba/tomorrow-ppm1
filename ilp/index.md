@@ -3,6 +3,9 @@ layout: page
 title: Introdução à Programação em Python para Meninas
 ---
 
+Agradecimentos ao Prof. Rodrigo Souza (DCC-IC-UFBA) pelo material original para este curso:
+[Programação em Python](https://rodrigorgs.github.io/aulas/ilp/)
+
 ### Slides
 
 - [Motivação](https://docs.google.com/presentation/d/1L70pAPrIstAOukWUIAEPKGXnzVXo46hV4m6BVAWkdnY/edit)
