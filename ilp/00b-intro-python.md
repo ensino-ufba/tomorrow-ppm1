@@ -138,4 +138,6 @@ Você pode usar o IDLE para desenvolver qualquer programa em Python, mas program
 - Allen B. Downey. **Pense em Python** (2ª ed.). Disponível em <https://penseallen.github.io/PensePython2e/>
 - Allen B. Downey. **Pense em Python** (3ª ed.). Disponível em <https://panda.ime.usp.br/pensepy/static/pensepy/>
 
+- Não deixe de olhar: [Página Oficial da Comunidade Python](https://www.python.org/). 
+
 {:/}
