@@ -23,6 +23,15 @@ template: inverse
 - Python é uma linguagem de programação lançada em 1991 por Guido van Rossum, na Holanda
 - Programas escritos em Python são executados pelo **interpretador** Python
 - A linguagem evoluiu ao longo do tempo; a versão mais recente é o **Python 3**, que possui diferenças em relação à versão anterior (descontinuada)
+
+
+
+- Python possui uma comunidade grande que contribui para a sua evolução.
+   - [Página Oficial da Comunidade Python](https://www.python.org/).
+
+---
+
+# Python 
 - Python é uma das linguagens de programação **[mais populares](https://www.tiobe.com/tiobe-index/)**
 - Python é usada por várias empresas e diversos **tipos de projetos**:
   - ciência de dados (ver pandas, numpy)
@@ -31,7 +40,6 @@ template: inverse
   - sistemas embarcados (ver Raspberry Pi)
   - chat bots
   - jogos (ver pygame)
-
 
 ---
 
@@ -132,12 +140,17 @@ Você pode usar o IDLE para desenvolver qualquer programa em Python, mas program
 
 ---
 
+## Não deixe de olhar
+
+- [Página Oficial da Comunidade Python](https://www.python.org/). 
+- [Bibliotecas: Python Package Index (PyPI)](https://pypi.org/)
+- [pyflo](https://pyflo.net/)
+
 # Referências
 
 - Nilo Menezes. **Introdução à Programação com Python** (2ª ed.). Novatec Editora.
 - Allen B. Downey. **Pense em Python** (2ª ed.). Disponível em <https://penseallen.github.io/PensePython2e/>
 - Allen B. Downey. **Pense em Python** (3ª ed.). Disponível em <https://panda.ime.usp.br/pensepy/static/pensepy/>
 
-- Não deixe de olhar: [Página Oficial da Comunidade Python](https://www.python.org/). 
 
 {:/}
