@@ -1,6 +1,6 @@
 ---
 layout: remark
-title: Introdução à Programação
+title: Introdução à Programação com Python para Meninas
 ---
 {::nomarkdown}
 template: inverse
@@ -26,43 +26,55 @@ Um **algoritmo** é uma sequência de passos bem definidos para resolver um prob
 <!-- Na computação, algoritmos transformam valores de entrada em valores de saída (como funções). -->
 
 ---
+# Troca de Pneu Furado
+
+```
+Pare em um local seguro. 
+Pegue o triângulo e sinalize atrás do veículo.
+Localize o estepe, macaco e chave de roda. 
+Afrouxe os parafusos do pneu furado com a chave de roda.
+Levante o veículo com o macaco.
+Solte os parafusos.
+Troque o pneu furado pelo estepe.
+Aperte os parafusos com a chave de roda.
+Desça o carro.
+Guarde o triângulo, estepe, macaco e chave de roda.
+```
+---
 
 # Programa
 
-Um **programa** é uma sequência de instruções que serão executadas pelo computador. Um programa, portanto, pode descrever algoritmos.
+Um **programa** é uma sequência de instruções que serão executadas pelo computador. 
+Programas descrevem e implementam algoritmos.
 
 O computador consegue executar **código de máquina**, isto é, programas escritos em **linguagem de máquina**. <!-- Cada máquina entende uma linguagem diferente -->
 
-Pessoas geralmente trabalham com **código-fonte**, isto é, programas escritos em uma **linguagem de programação** (mais fácil de entender).
+Pessoas geralmente trabalham com **código-fonte**, isto é, programas escritos em uma **linguagem de programação de alto nível** (mais fácil de entender).
 
 > Exemplos de linguagens de programação: C++, Python, Java, JavaScript
 
 ---
 
-# Compilador e interpretador
-
-Um **compilador** ou **intepretador** é um programa que transforma código-fonte em código de máquina.
-
-- O compilador faz isso de uma vez só, gravando o código de máquina em um arquivo executável
-- O interpretador transforma o código enquanto o executa.
-
-Um programa que é interpretado também é chamado de **script**.
-
----
-
 # Instruções
 
-As linguagens de programação possuem os seguintes tipos de instruções:
+As linguagens de programação possuem instruções para:
 
-- **entrada de dados** - lê dados do teclado, de um arquivo, da rede, do relógio, da câmera e outros dispositivos
+- **entrada de dados** - ler dados do teclado, de um arquivo, da rede, do relógio, da câmera e outros dispositivos
 - **saída de dados** - escrever na tela ou em um arquivo, enviar dados via rede, emitir um som etc.
-- **processamento de dados** - basicamente operações matemáticas
-- **condicionais** - permite executar ou não outras instruções a depender de uma condição
-- **repetição** - permite re-executar instruções
+- **processamento de dados** - transformar dados, por exemplo, com operações aritméticas e estruturas para controlar o fluxo de execução:
+   - **sequência**
+   - **seleção** 
+   - **repetição**
 
 ---
 
-# Exemplo de programa
+# Estruturas de Controle
+
+<img src="./figs/fig-control-flow-basic-structures.png" alt="image" width="100%">
+
+---
+
+# Exemplo de algoritmo
 
 Algoritmo para calcular a idade de uma pessoa, escrito em português:
 
@@ -77,7 +89,7 @@ Algoritmo para calcular a idade de uma pessoa, escrito em português:
 
 # Exemplo de programa
 
-Programa escrito na linguagem de programação Python:
+Código-fonte do programa na linguagem de programação Python:
 
 ```python
 # Entrada
@@ -93,5 +105,34 @@ if not ja_fez_aniversario:
 # Saída
 print(idade)
 ```
+---
+
+# Tradução e execução de programas
+
+O computador consegue executar **código de máquina**, isto é, programas escritos em **linguagem de máquina**. <!-- Cada máquina entende uma linguagem diferente -->
+
+- É preciso traduzir um programa escrito em *linguagem de programação* para um programa em *linguagem de máquina*.
+
+Um **compilador** é um programa que traduz o código-fonte de um programa escrito 
+em uma linguagem de programação para  código de máquina.
+
+- O compilador traduz todo o programa e grava o código de máquina em um arquivo executável.
+
+Um **intepretador** também é um programa que traduz o código-fonte em código de máquina, mas executa as instruções à medida em que faz a tradução.
+
+- Um programa que é interpretado também é chamado de **script**.
+
+---
+
+# Compilador
+
+<img src="./figs/fig-compilador.png" alt="image" width="100%">
+
+---
+
+# Interpretador
+
+<img src="./figs/fig-interpretador.png" alt="image" width="100%">
+
 
 {:/}

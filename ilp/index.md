@@ -1,20 +1,27 @@
 ---
 layout: page
-title: Introdução à Programação em Python
+title: Introdução à Programação em Python para Meninas
 ---
+
+Agradecimentos ao Prof. Rodrigo Souza (DCC-IC-UFBA) pelo material original para este curso:
+[Programação em Python](https://rodrigorgs.github.io/aulas/ilp/)
 
 ### Slides
 
 - [Motivação](https://docs.google.com/presentation/d/1L70pAPrIstAOukWUIAEPKGXnzVXo46hV4m6BVAWkdnY/edit)
-- [Apresentação](00-apresentacao)
+- [Apresentação](0-apresentacao)
 - [Introdução à programação](00a-intro-programacao)
+   - [Exemplo](0-scratch-python)
 - [Introdução à linguagem Python](00b-intro-python)
 - [Variáveis](01a-variaveis)
 - [Expressões aritméticas e formatação de strings](01b-expressoes)
 - [Entrada e saída](01c-entrada-saida)
-- [Correção automática - entrada e saída](01d-entrada-saida-correcao)
+   - [Correção automática - Padrões de entrada e saída](01d-entrada-saida-correcao)
 - [Condicionais (if/else)](02-if-else)
-- [Estruturas de repetição (while/for)](03-repeticao)
+- [Estruturas de repetição (for)](03a-repeticao)
+- [Estruturas de repetição (while)](03b-repeticao)
+- [Outros comandos](03c-repeticao)
+- [Listas](04-listas)
 - [Funções](https://docs.google.com/presentation/d/1WwM1eyjoHY1AjlFB-QMLRkpf282d8reQ_gSj32hWo-k/edit)
 
 <!--
@@ -31,6 +38,7 @@ title: Introdução à Programação em Python
 - [Introdução](ex-introducao)
 - [Condicionais (if/else)](ex-if)
 - [Repetição (for/while)](ex-for-while)
+- [Listas](ex-listas)
 
 ### Correção automática
 
